@@ -31,6 +31,9 @@ const Header = (props) => {
                     </section>
                     :
                     <section class="navbar-anonymous">
+                        <div>
+                            <img src={mainLogo} alt=""></img>
+                        </div>
                          <div class="first-bar">
                              
                         </div>
