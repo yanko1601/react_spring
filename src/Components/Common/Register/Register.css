@@ -1,0 +1,122 @@
+.form-wrapper {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.wrapper {
+    width: 40%;
+    height: 600px;
+    margin: 50px auto;
+    border: 4px solid black;
+    display: flex;
+    flex-direction: column;
+    border-radius: 10px;
+}
+
+.login-header p {
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: bolder;
+    color: rgb(250, 248, 248);
+    font-size: 40px;
+    margin: 20px auto;
+    padding-left: 30px;
+    text-align:center;
+}
+
+.login-header {
+    height: 15%;
+    background: rgb(59, 193, 238);
+    margin: 0;
+    padding: 0;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    align-content: flex-end;
+}
+
+.login-main {
+    height: 75%;
+    width: 100%;
+    background: white;
+    display: flex;
+    flex-direction: column;
+    background: rgb(241, 235, 224);
+}
+
+.input-row {
+    width: 90%;
+    margin: 5px auto;
+    padding: 0;
+    display: flex;
+    flex-direction: row;
+    align-content:center;
+}
+
+.login-field {
+    width: 50%;
+    flex-direction: column;
+    display: flex;
+    padding-top: 20px;
+}
+
+.login-field * {
+    flex-direction: column;
+    margin: auto;
+    padding: 0px;
+}
+
+.login-main input {
+    width: 60%;
+    height: 2em;
+    margin: 0px auto;
+    border: 2px solid rgb(0, 0, 0);
+    border-radius: 5px;
+    padding: 0 10px;
+}
+
+.login-main select {
+    width: 60%;
+    height: 2em;
+    margin: 0px auto;
+    border: 2px solid rgb(0, 0, 0);
+    border-radius: 5px;
+    padding: 0 10px;
+}
+
+.login-main button {
+    width: 30%;
+    height: 3em;
+    border: 1px solid black;
+    border-radius: 5px;
+    align-content: flex-end;
+    padding: 4px 10px;
+    margin: 50px auto;
+    background: teal;
+    color: white;
+}
+
+.login-footer {
+    height: 10%;
+    background: rgb(70, 128, 236);
+    margin: 0;
+    padding: 0;
+    border-bottom-right-radius: 8px;
+    border-bottom-left-radius: 8px;
+    display: flex;
+    align-content: space-between;
+}
+
+.login-footer p {
+    align-content:stretch;
+    margin: 0 5px;
+    color: white;
+    font-size: 18px;
+    padding: 10px;
+}
+
+.login-footer a {
+    font-size: 18px;
+    padding: 10px 0;
+    color: white;
+    font-weight: bolder;
+}
