@@ -1,8 +1,33 @@
+import './Home.css';
+import RankTable from '../RankTable/RankTable';
+import GamesTable from '../GamesTable/GamesTable';
 
-const Home = () => {
+const Home = (props) => {
+    console.log(props)
     return(
         <div className="home-wrapper">
-            <h1>Home component</h1>
+            {props.data.token ? 
+            <div>
+                <h1>Тенис лига Шумен</h1>
+                <div className="table-wrapper">
+                    <section className="table-section">
+                        <RankTable></RankTable>
+                    </section>
+                    <section className="table-section">
+                        <GamesTable></GamesTable>
+                    </section>
+                    <section className="table-section">
+                        <RankTable></RankTable>
+                    </section>
+                </div>
+            </div>
+                : 
+                <div>
+                    <h1>Home component</h1>
+                    <p>lorem ipsum dolor sit amet, consectetur</p>
+                </div>
+            }          
+            
         </div>
         
     );
