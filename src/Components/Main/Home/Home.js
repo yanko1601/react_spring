@@ -3,7 +3,6 @@ import RankTable from '../RankTable/RankTable';
 import GamesTable from '../GamesTable/GamesTable';
 
 const Home = (props) => {
-    console.log(props)
     return(
         <div className="home-wrapper">
             {props.data.token ? 

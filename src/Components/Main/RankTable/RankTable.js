@@ -1,7 +1,32 @@
 import './RankTable.css';
+import { useState, useEffect } from 'react'
 
 const RankTable = () => {
 
+    const [players, setPlayers] = useState({})
+    const [hasErrors, setHasErrors] = useState(false)
+
+    const options = {
+        method: 'GET',
+        headers: {
+            'Accept': 'application/json',
+      'Content-Type': 'application/json'
+        }
+    }
+
+    async function fetchData() {
+        const res = await fetch('http://localhost:8080/player/all', options);
+        res
+          .json()
+          .then(res => setPlayers({res}))
+          .catch(err => setHasErrors(err));
+      }
+
+    useEffect(() => {
+       fetchData()
+    }, []);
+
+    console.log(players);
     return(
         <div class="container">
             <div class="row">
@@ -16,10 +41,18 @@ const RankTable = () => {
                                 </div>
                             </div>
                             <div class="divTableBody">
-                                <div class="divTableRow">
-                                    <div class="divTableCell players">1</div>
-                                    <div class="divTableCell players">Янко Янков</div>
-                                </div>
+                                {players.res ? 
+                                    players.res.map(x => 
+                                        <div class="divTableRow" key={x.id}>
+                                            <div class="divTableCell players" >{x.id}</div>
+                                            <div class="divTableCell players" >{x.name} {x.lastName}</div>
+                                        </div>)
+                                        :
+                                        <div class="divTableRow">
+                                            <div class="divTableCell players" ></div>
+                                            <div class="divTableCell players" ></div>
+                                        </div>
+                                }
                             </div>
                         </div>
                     </div>

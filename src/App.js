@@ -2,17 +2,18 @@ import { useState } from 'react'
 import { Route, Switch } from 'react-router';
 import './App.css';
 
+import DataFetch from './Data/DataFetch';
+
 import Home from './Components/Main/Home/Home';
 import Login from './Components/Common/Login/Login';
 import Header from './Components/Common/Header/Header';
 import Footer from './Components/Common/Footer/Footer';
 import Register from './Components/Common/Register/Register';
-import RankTable from './Components/Main/RankTable/RankTable';
 
 function App() {
 
   const [currentUser, setCurrentUser] = useState({id: 1, name: 'Yanko'})
-  const [token, setToken] = useState('token')
+  const [token, setToken] = useState('token');
 
   return (
     <div className="app">
