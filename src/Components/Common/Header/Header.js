@@ -23,7 +23,7 @@ const Header = (props) => {
                         </div>
                         <div class="second-bar">
                             <ul>
-                                <li>Здравей, Янко</li>
+                                <li>Здравей, {props.data.user.name}</li>
                                 <li><Link class="exit-button" to="#">Излез</Link></li>
                             </ul>
                         </div>

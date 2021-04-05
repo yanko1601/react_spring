@@ -2,8 +2,6 @@ import { useState } from 'react'
 import { Route, Switch } from 'react-router';
 import './App.css';
 
-import DataFetch from './Data/DataFetch';
-
 import Home from './Components/Main/Home/Home';
 import Login from './Components/Common/Login/Login';
 import Header from './Components/Common/Header/Header';
@@ -13,7 +11,12 @@ import Register from './Components/Common/Register/Register';
 function App() {
 
   const [currentUser, setCurrentUser] = useState({id: 1, name: 'Yanko'})
-  const [token, setToken] = useState('token');
+  const [token, setToken] = useState('');
+
+  const handleLogin = (logindetails) => {
+    setCurrentUser(logindetails.playerOutputView);
+    setToken(logindetails.token);
+  }
 
   return (
     <div className="app">
@@ -21,7 +24,7 @@ function App() {
       <Header data={{user: currentUser, token: token}}/>
       <Switch>
         <Route path="/" exact component={ () => <Home data={{user: currentUser, token: token}}/>} />
-        <Route path="/login" exact component={ Login }/>
+        <Route path="/login" exact component={ () => <Login HandleLogin={handleLogin} /> }/>
         <Route path="/register" exact component={ Register }/>
       </Switch>
       <Footer />

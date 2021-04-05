@@ -25,8 +25,6 @@ const RankTable = () => {
     useEffect(() => {
        fetchData()
     }, []);
-
-    console.log(players);
     return(
         <div class="container">
             <div class="row">
