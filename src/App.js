@@ -31,7 +31,7 @@ function App() {
       <Header data={{user: currentUser, token: token}} HandleLogOut={handleLogOut}/>
       <Switch>
         <Route path="/" exact component={ () => <Home data={{user: currentUser, token: token}} />} />
-        <Route path="/login" exact component={ () => <Login HandleLogin={handleLogin} /> }/>
+        {token ? <Redirect to='/'/> : <Route path="/login" exact component={ () => <Login HandleLogin={handleLogin} /> }/>}
         <Route path="/register" exact component={ Register }/>
       </Switch>
       <Footer />
