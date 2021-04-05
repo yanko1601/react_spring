@@ -3,6 +3,11 @@ import RankTable from '../RankTable/RankTable';
 import GamesTable from '../GamesTable/GamesTable';
 
 const Home = (props) => {
+
+    const userDetails = () => {
+        
+    }
+
     return(
         <div className="home-wrapper">
             {props.data.token ? 
@@ -23,7 +28,7 @@ const Home = (props) => {
                 : 
                 <div>
                     <h1>Home component</h1>
-                    <p>lorem ipsum dolor sit amet, consectetur</p>
+                    <p></p>
                 </div>
             }          
             

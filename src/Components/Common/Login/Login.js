@@ -1,5 +1,5 @@
 import './Login.css';
-import { Link } from 'react-router-dom';
+import { Link, Redirect } from 'react-router-dom';
 import { useState } from 'react'
 
 async function fetData(fData) {
@@ -34,11 +34,12 @@ const Login = (props) => {
         }).then(res => res.json())
         .then(data => props.HandleLogin(data))
         .catch(err => console.error(err))
+        
     }
 
     return (
-        <form onSubmit={onSubmitHandler}>
-            <body>
+        <body>
+            <form onSubmit={onSubmitHandler}>
                 <section class = "wrapper">
                     <header class = "login-header">
                         <p>Влез</p>
@@ -60,8 +61,8 @@ const Login = (props) => {
                         <p>Регистрирай се </p><Link to="/register">тук</Link>
                     </footer>
                 </section>
-            </body>
-        </form>
+            </form>
+        </body>
     );
 
 }

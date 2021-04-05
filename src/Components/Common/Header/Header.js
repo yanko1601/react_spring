@@ -5,6 +5,11 @@ import { Link } from 'react-router-dom'
 
 const Header = (props) => {
 
+    const onClickExitButton = (e) => {
+        e.preventDefault();
+        props.HandleLogOut()
+    } 
+
     return (
         <header class="site-header">
             <nav class="navbar">
@@ -13,18 +18,25 @@ const Header = (props) => {
                         <div>
                             <img src={mainLogo} alt=""></img>
                         </div>
-                        <div class="first-bar">
+                        {props.data.user.role === "ADMIN" ? 
+                            <div class="first-bar">
                             <Link class="user-button" to="#">Ранглиста</Link>
                             <Link class="user-button" to="#">Предизвикай</Link>
                             <Link class="user-button" to="#">АДМИН</Link>
-                        </div>
+                            </div>
+                            :
+                            <div class="first-bar">
+                            <Link class="user-button" to="#">Ранглиста</Link>
+                            <Link class="user-button" to="#">Предизвикай</Link>
+                            </div>
+                        }
                         <div class="middle-bar">
                             <Link to="#">Аматьорска тенис лига</Link>
                         </div>
                         <div class="second-bar">
                             <ul>
                                 <li>Здравей, {props.data.user.name}</li>
-                                <li><Link class="exit-button" to="#">Излез</Link></li>
+                                <li><button class="exit-button" onClick={onClickExitButton}>Излез</button></li>
                             </ul>
                         </div>
                     </section>
