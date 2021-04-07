@@ -1,11 +1,12 @@
 .form-wrapper {
+    width: 100%;
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
 .wrapper {
-    width: 40%;
+    width: 50%;
     height: 600px;
     margin: 50px auto;
     border: 4px solid black;
@@ -43,7 +44,7 @@
     background: rgb(241, 235, 224);
 }
 
-.input-row {
+.login-main .input-row {
     width: 90%;
     margin: 5px auto;
     padding: 0;

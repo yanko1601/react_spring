@@ -8,10 +8,12 @@ import Login from './Components/Common/Login/Login';
 import Header from './Components/Common/Header/Header';
 import Footer from './Components/Common/Footer/Footer';
 import Register from './Components/Common/Register/Register';
+import Admin from './Components/Admin/Admin';
+import NotAuth from './Components/Admin/NotAuth';
 
 function App() {
 
-  const [currentUser, setCurrentUser] = useState({id: 1, name: 'Yanko'})
+  const [currentUser, setCurrentUser] = useState({})
   const [token, setToken] = useState('');
 
   const handleLogOut = () => {
@@ -31,8 +33,9 @@ function App() {
       <Header data={{user: currentUser, token: token}} HandleLogOut={handleLogOut}/>
       <Switch>
         <Route path="/" exact component={ () => <Home data={{user: currentUser, token: token}} />} />
-        {token ? <Redirect to='/'/> : <Route path="/login" exact component={ () => <Login HandleLogin={handleLogin} /> }/>}
+        {token ? <Route path="/login" exact component={ () => <Home data={{user: currentUser, token: token}} />} /> : <Route path="/login" exact component={ () => <Login HandleLogin={handleLogin} /> }/>}
         <Route path="/register" exact component={ Register }/>
+        <Route path="/admin" exact component={ Admin }/>
       </Switch>
       <Footer />
     </div>

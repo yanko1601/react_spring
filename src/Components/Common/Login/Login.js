@@ -1,5 +1,5 @@
 import './Login.css';
-import { Link, Redirect } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { useState } from 'react'
 
 async function fetData(fData) {
@@ -19,7 +19,7 @@ async function fetData(fData) {
 
 const Login = (props) => {
 
-    // const[loginData, setLoginData] = useState({});
+    const [succsess, setSuccess] = useState(false);
 
     const onSubmitHandler = (e) => {
         e.preventDefault();
@@ -32,7 +32,15 @@ const Login = (props) => {
             },
             body: JSON.stringify(loginData)
         }).then(res => res.json())
-        .then(data => props.HandleLogin(data))
+        .then(data => {
+            if(data.token) {
+                setSuccess(true)
+                setTimeout(() => {
+                    setSuccess(false)
+                    props.HandleLogin(data)
+                }, 2000)
+            }
+        })
         .catch(err => console.error(err))
         
     }
@@ -40,6 +48,12 @@ const Login = (props) => {
     return (
         <body>
             <form onSubmit={onSubmitHandler}>
+                {succsess ? 
+                    <div className="login-message">
+                    <h5>Успешно се логнахте в лигата</h5>
+                </div> 
+                :
+                <div></div>}
                 <section class = "wrapper">
                     <header class = "login-header">
                         <p>Влез</p>

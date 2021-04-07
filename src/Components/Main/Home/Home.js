@@ -4,9 +4,7 @@ import GamesTable from '../GamesTable/GamesTable';
 
 const Home = (props) => {
 
-    const userDetails = () => {
-        
-    }
+   
 
     return(
         <div className="home-wrapper">

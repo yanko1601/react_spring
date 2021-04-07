@@ -20,12 +20,14 @@ const Header = (props) => {
                         </div>
                         {props.data.user.role === "ADMIN" ? 
                             <div class="first-bar">
+                            <Link class="user-button" to="/">Начало</Link>
                             <Link class="user-button" to="#">Ранглиста</Link>
                             <Link class="user-button" to="#">Предизвикай</Link>
-                            <Link class="user-button" to="#">АДМИН</Link>
+                            <Link class="user-button" to="/admin">АДМИН</Link>
                             </div>
                             :
                             <div class="first-bar">
+                            <Link class="user-button" to="/">Начало</Link>
                             <Link class="user-button" to="#">Ранглиста</Link>
                             <Link class="user-button" to="#">Предизвикай</Link>
                             </div>
@@ -49,7 +51,7 @@ const Header = (props) => {
                              
                         </div>
                         <div class="middle-bar">
-                            <Link to="#">Аматьорска тенис лига</Link>
+                            <Link to="#"><span>Аматьорска тенис лига</span></Link>
                         </div>
                         <div class="second-bar">
                         <ul>

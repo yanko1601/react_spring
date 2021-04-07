@@ -44,3 +44,21 @@
 .exit-button{
     text-decoration: none;
 }
+
+.navbar-anonymous{
+    display: flex;
+    justify-content: space-between;    
+    width: 100vw;
+}
+
+.navbar-anonymous .middle-bar {
+    font-family:Georgia, 'Times New Roman', Times, serif;
+}
+
+.navbar-anonymous .middle-bar span {
+    
+    text-decoration: none;
+    font-size:36px;
+    color: rgb(24, 4, 114);
+    
+}

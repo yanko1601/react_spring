@@ -10,7 +10,7 @@ div.blueTable {
     padding: 3px 2px;
   }
   .divTable.blueTable .divTableBody .divTableCell {
-    font-size: 13px;
+    font-size: 18px;
   }
   .divTable.blueTable .divTableRow:nth-child(even) {
     background: #e7782e;
@@ -23,7 +23,7 @@ div.blueTable {
     border-bottom: 2px solid #444444;
   }
   .divTable.blueTable .divTableHeading .divTableHead {
-    font-size: 15px;
+    font-size: 25px;
     font-weight: bold;
     color: #0e0bc7;
     border-left: 2px solid #0e0f0f;
@@ -33,7 +33,7 @@ div.blueTable {
   }
   
   .blueTable .tableFootStyle {
-    font-size: 14px;
+    font-size: 18px;
   }
   .blueTable .tableFootStyle .links {
        text-align: right;
@@ -66,7 +66,7 @@ div.blueTable {
     text-align: center;
     color: darkblue;
     font-weight: bold;
-    font-size: large;
+    font-size: 28px;
   }
 
   .table-header {
