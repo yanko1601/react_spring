@@ -1,3 +1,32 @@
-h1 {
+.container {
+    display: flex;
+    flex-direction: column;
+}
+
+.admin-wrapper {
+    
+    display: flex;
+    margin-left: 200px;
+}
+
+.admin-button {
+    margin-top: 40px;
+    margin-right: 20px;
+    margin-bottom: 50px;
+    border: 2px solid black;
+    border-radius: 4px;
+    padding: 10px 20px;
+    background: coral;
+    width: 150px;
+    align-items: flex-end;
+    margin-left: 200px;
+
+}
+
+.admin-button span {
+    text-decoration: none;
+    color: black;
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: bolder;
     text-align: center;
 }

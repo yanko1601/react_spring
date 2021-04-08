@@ -22,23 +22,23 @@ const Header = (props) => {
                             <div class="first-bar">
                             <Link class="user-button" to="/">Начало</Link>
                             <Link class="user-button" to="#">Ранглиста</Link>
-                            <Link class="user-button" to="#">Предизвикай</Link>
+                            <Link class="user-button" to="/challenge">Предизвикай</Link>
                             <Link class="user-button" to="/admin">АДМИН</Link>
                             </div>
                             :
                             <div class="first-bar">
                             <Link class="user-button" to="/">Начало</Link>
                             <Link class="user-button" to="#">Ранглиста</Link>
-                            <Link class="user-button" to="#">Предизвикай</Link>
+                            <Link class="user-button" to="/challenge">Предизвикай</Link>
                             </div>
                         }
                         <div class="middle-bar">
-                            <Link to="#">Аматьорска тенис лига</Link>
+                            <Link to="/"><span>Аматьорска тенис лига</span></Link>
                         </div>
                         <div class="second-bar">
                             <ul>
                                 <li>Здравей, {props.data.user.name}</li>
-                                <li><button class="exit-button" onClick={onClickExitButton}>Излез</button></li>
+                                <li><button class="user-button" onClick={onClickExitButton}>Излез</button></li>
                             </ul>
                         </div>
                     </section>
@@ -51,7 +51,7 @@ const Header = (props) => {
                              
                         </div>
                         <div class="middle-bar">
-                            <Link to="#"><span>Аматьорска тенис лига</span></Link>
+                            <Link to="/"><span>Аматьорска тенис лига</span></Link>
                         </div>
                         <div class="second-bar">
                         <ul>

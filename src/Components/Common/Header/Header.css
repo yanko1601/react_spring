@@ -28,6 +28,11 @@
 .user-button{
     text-decoration: none;
     margin-right: 20px;
+    border: 2px solid black;
+    color: white;
+    border-radius: 5px;
+    padding: 5px;
+    background: rgb(9, 77, 70);
 }
 
 .navbar .second-bar ul {
@@ -61,4 +66,11 @@
     font-size:36px;
     color: rgb(24, 4, 114);
     
+}
+
+.middle-bar span {
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 36px;
+    font-weight: bolder;
+    color: rgb(165, 217, 238);
 }

@@ -2,25 +2,37 @@ import { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom';
 import './Register.css'
 
-const Register = () => {
+const Register = (props) => {
 
-    const[cities, setCities] = useState('');
 
-    useEffect(() => {
-        fetch('http://localhost:8080/city/getAll', {
-            method: 'GET',
+    const onSubmitHandler = (e) => {
+        e.preventDefault();
+
+        const data = {
+            "name": e.target.name.value,
+            "lastName": e.target.lastName.value,
+            "email": e.target.email.value,
+            "password": e.target.password.value,
+            "confirmPassword": e.target.confirmPassword.value,
+            "city": e.target.city.value,
+            "age": Number(e.target.age.value)
+        }
+
+        fetch('http://localhost:8080/player/register', {
+            method: 'POST',
             headers: {
                 'Accept': 'application/json',
                 'Content-Type': 'application/json'
-            }
+            },
+            body: JSON.stringify(data)
         })
         .then(res => res.json())
-        .then(data => setCities(data))
+        .then(data => props.HandleRegister(data))
         .catch(err => console.error(err))
-    }, [])
+    }
 
     return(
-            <form class = "form-wrapper">
+            <form class = "form-wrapper" onSubmit={onSubmitHandler}>
                 <section class = "wrapper">
                     <header class = "login-header">
                         <p>Регистрирай се</p>
@@ -53,18 +65,17 @@ const Register = () => {
                             </div>
                             <div class = "login-field">
                                 <label>Потвърди парола</label>
-                                <input type="confirmPassword" id="confirmPassword" placeholder="потвърди парола" name="confirmPassword"/>
+                                <input type="password" id="confirmPassword" placeholder="потвърди парола" name="confirmPassword"/>
                             </div>
                         </section>
                         <section class = "input-row">
                             <div class = "login-field">
                                 <label>Град</label>
-                                <select type="text" placeholder="град" name="city">
-                                     {cities ? cities.map (c => {
-                                        <option key={c.id} value={c.name}>{c.name}</option>
-                                    }) : 
-                                        <option key="" value=""></option>
-                                    }
+                                <select type="text" placeholder="град" name="city" defaultValue="Шумен">
+                                    <option key="1" value="Шумен">Шумен</option>
+                                    <option key="2" value="Варна">Варна</option>
+                                    <option key="3" value="Русе">Русе</option>
+                                    <option key="4" value="Бургас">Бургас</option>
                                 </select>
                             </div>
                             {/* <div class = "login-field">
