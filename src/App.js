@@ -9,6 +9,7 @@ import Header from './Components/Common/Header/Header';
 import Footer from './Components/Common/Footer/Footer';
 import Register from './Components/Common/Register/Register';
 import Admin from './Components/Admin/Admin';
+import Challenge from './Components/Main/Challenge/Challenge';
 
 function App() {
 
@@ -41,6 +42,7 @@ function App() {
         {token ? <Route path="/login" exact component={ () => <Home data={{user: currentUser, token: token}} />} /> : <Route path="/login" exact component={ () => <Login HandleLogin={handleLogin} /> }/>}
         {registered ? <Route path="/register" exact component={ () => <Home data={{user: currentUser, token: token}} />} /> : <Route path="/register" exact component={ () => <Register HandleRegister={handleRegister}/> }/>}
         <Route path="/admin" exact component={ Admin }/>
+        <Route path="/challenge" exact component={ () => <Challenge data={{user: currentUser, token: token}}/>}/>
       </Switch>
       <Footer />
     </div>
