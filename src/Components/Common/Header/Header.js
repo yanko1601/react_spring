@@ -14,38 +14,38 @@ const Header = (props) => {
         <header class="site-header">
             <nav class="navbar">
                 { props.data.token ?
-                    <section class="navbar-dashboard">
+                    <section className="navbar-dashboard">
                         <div>
                             <img src={mainLogo} alt=""></img>
                         </div>
                         {props.data.user.role === "ADMIN" ? 
-                            <div class="first-bar">
-                            <Link class="user-button" to="/">Начало</Link>
-                            <Link class="user-button" to="#">Ранглиста</Link>
-                            <Link class="user-button" to="/challenge">Предизвикай</Link>
-                            <Link class="user-button" to="/admin">АДМИН</Link>
+                            <div className="first-bar">
+                            <Link className="user-button" to="/">Начало</Link>
+                            <Link className="user-button" to="#">Ранглиста</Link>
+                            <Link className="user-button" to="/challenge">Предизвикай</Link>
+                            <Link className="user-button" to="/admin">АДМИН</Link>
                             </div>
                             :
-                            <div class="first-bar">
-                            <Link class="user-button" to="/">Начало</Link>
-                            <Link class="user-button" to="#">Ранглиста</Link>
-                            <Link class="user-button" to="/challenge">Предизвикай</Link>
+                            <div className="first-bar">
+                            <Link className="user-button" to="/">Начало</Link>
+                            <Link className="user-button" to="#">Ранглиста</Link>
+                            <Link className="user-button" to="/challenge">Предизвикай</Link>
                             </div>
                         }
-                        <div class="middle-bar">
+                        <div className="middle-bar">
                             <Link to="/"><span>Аматьорска тенис лига</span></Link>
                         </div>
-                        <div class="second-bar">
+                        <div className="second-bar">
                             <ul>
                                 <li>Здравей, {props.data.user.name}</li>
-                                <li><button class="user-button" onClick={onClickExitButton}>Излез</button></li>
+                                <li><button className="user-button" onClick={onClickExitButton}>Излез</button></li>
                             </ul>
                         </div>
                     </section>
                     :
                     <section class="navbar-anonymous">
                         <div>
-                            <img src={mainLogo} alt=""></img>
+                            <img src={mainLogo}></img>
                         </div>
                          <div class="first-bar">
                              
@@ -55,8 +55,8 @@ const Header = (props) => {
                         </div>
                         <div class="second-bar">
                         <ul>
-                            <li><Link to="/register">Регистрирай се</Link></li>
-                            <li><Link to="/login">Влез</Link></li>
+                            <li><Link to="/register" className="user-button">Регистрирай се</Link></li>
+                            <li><Link to="/login" className="user-button">Влез</Link></li>
                         </ul>
                         </div>
                     </section>

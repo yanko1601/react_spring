@@ -46,37 +46,38 @@ const Login = (props) => {
     }
 
     return (
-        <body>
-            <form onSubmit={onSubmitHandler}>
+        <form onSubmit={onSubmitHandler}>
+            <body>            
                 {succsess ? 
                     <div className="login-message">
-                    <h5>Успешно се логнахте в лигата</h5>
-                </div> 
+                        <h5>Успешно се логнахте в лигата</h5>
+                    </div> 
                 :
-                <div></div>}
-                <section class = "wrapper">
-                    <header class = "login-header">
+                    <div></div>
+                }
+                <section className = "login-wrapper">
+                    <header className = "login-header">
                         <p>Влез</p>
                     </header>
-                    <main class = "login-main">
-                        <div class = "login-field">
+                    <main className = "login-main">
+                        <div className = "login-field">
                             <label>ИМЕЙЛ</label>
                             <input type="text" placeholder="имейл" id="email" name="email"/>
                         </div>
-                        <div class = "login-field">
+                        <div className = "login-field">
                             <label>ПАРОЛА</label>
                             <input type="password" placeholder="парола" id="password" name="password"/>
                         </div>
             
                         <button type="submit">ВЛЕЗ</button>
                     </main>
-                    <footer class = "login-footer">
+                    <footer className = "login-footer">
                         <p>Нямаш регистрация?</p>
                         <p>Регистрирай се </p><Link to="/register">тук</Link>
                     </footer>
-                </section>
-            </form>
-        </body>
+                </section>            
+            </body>
+        </form>
     );
 
 }

@@ -84,7 +84,7 @@ const Register = (props) => {
                             </div> */}
                         </section>
 
-                        <button type="submit">РЕГИСТРИРАЙ МЕ</button>
+                        <button type="submit" className="register-button">РЕГИСТРИРАЙ МЕ</button>
                     </main>
                     <footer class = "login-footer">
                         <p>Вече си регистриран?</p>
