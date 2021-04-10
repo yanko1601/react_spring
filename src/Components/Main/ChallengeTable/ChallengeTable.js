@@ -26,6 +26,23 @@ class ChallengeTable extends Component {
 
 
     onClickReceiveButton(id) {
+        const data = {
+            "firstPlayerId": id,
+            "secondPlayerId": this.props.data.user.id
+        }
+
+        fetch('http://localhost:8080/game/create', {
+            method: 'POST',
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json',
+                'authorization': `${this.props.data.token}`
+            },
+            body: JSON.stringify(data)
+        })
+        .then(res => res.json())
+        .then(resdata => this.setState({message: resdata.message}))
+        .catch(err => console.error(err))
 
     }
 
