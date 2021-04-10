@@ -23,6 +23,36 @@ class ChallengeTable extends Component {
             this.setState({players: data, loading: false});
         }
 
+
+    onClickReceiveButton(id) {
+
+    }
+
+    onClickDeclineButton(id) {
+
+    }
+
+    onClickChallengeButton(id) {
+        const data = {
+            "challengingPlayerId": this.props.data.user.id,
+            "challengedPlayerId": id
+        }
+
+        fetch('http://localhost:8080/challenge/setchallenge', {
+            method: 'POST',
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json',
+                'authorization': `${this.props.data.token}`
+            },
+            body: JSON.stringify(data)
+        })
+        .then(res => res.json())
+        .then(data => console.log(data))
+        .catch(err => console.error(err))
+        
+    }
+
     render () {
         return (
             <div className="container">
@@ -53,8 +83,8 @@ class ChallengeTable extends Component {
                                             {pl.challengedYou ? 
                                                 <div>
                                                     <p>Предизвикан си</p>
-                                                    <button>Приеми</button>
-                                                    <button>Откажи</button>
+                                                    <button onClick={this.onClickReceiveButton.bind(this, pl.id)}>Приеми</button>
+                                                    <button onClick={this.onClickDeclineButton.bind(this, pl.id)}>Откажи</button>
                                                 </div>
                                                 :
                                                 pl.challenged ?
@@ -67,7 +97,7 @@ class ChallengeTable extends Component {
                                                     <p>Имате вече мач</p>
                                                 </div>
                                                 :
-                                                <button>Предизвикай</button>                    
+                                                <button onClick={this.onClickChallengeButton.bind(this, pl.id)}>Предизвикай</button>                    
                                             }
                                         </div>
                                     </div>
