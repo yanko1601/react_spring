@@ -1,5 +1,6 @@
 import './ChallengeTable.css'
 import { useState, useEffect, Component } from 'react'
+import { Redirect } from 'react-router';
 
 class ChallengeTable extends Component {
 
@@ -29,6 +30,23 @@ class ChallengeTable extends Component {
     }
 
     onClickDeclineButton(id) {
+        const data = {
+            "challengingPlayerId": id,
+            "challengedPlayerId": this.props.data.user.id
+        }
+
+        fetch('http://localhost:8080/challenge/decline', {
+            method: 'POST',
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json',
+                'authorization': `${this.props.data.token}`
+            },
+            body: JSON.stringify(data)
+        })
+        .then(res => res.json())
+        .then(resdata => this.setState({message: resdata.message}))
+        .catch(err => console.error(err))
 
     }
 
@@ -48,7 +66,7 @@ class ChallengeTable extends Component {
             body: JSON.stringify(data)
         })
         .then(res => res.json())
-        .then(data => console.log(data))
+        .then(resdata => this.setState({message: resdata.message}))
         .catch(err => console.error(err))
         
     }
@@ -57,6 +75,13 @@ class ChallengeTable extends Component {
         return (
             <div className="container">
             <div className="row">
+                {this.state.message ?
+                    <div className="challenge-message">
+                        <p>{this.state.message}</p>
+                    </div>
+                    :
+                    <div></div>
+                }
                 <div className="col-sm">
                     {this.state.loading ? 
                         (<div>
