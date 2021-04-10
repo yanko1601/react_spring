@@ -1,6 +1,5 @@
 import './ChallengeTable.css'
-import { useState, useEffect, Component } from 'react'
-import { Redirect } from 'react-router';
+import { Component } from 'react'
 
 class ChallengeTable extends Component {
 

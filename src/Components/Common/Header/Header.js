@@ -21,7 +21,6 @@ const Header = (props) => {
                         {props.data.user.role === "ADMIN" ? 
                             <div className="first-bar">
                             <Link className="user-button" to="/">Начало</Link>
-                            <Link className="user-button" to="#">Ранглиста</Link>
                             <Link className="user-button" to="/challenge">Предизвикай</Link>
                             <Link className="user-button" to="/admin">АДМИН</Link>
                             </div>
@@ -37,7 +36,7 @@ const Header = (props) => {
                         </div>
                         <div className="second-bar">
                             <ul>
-                                <li>Здравей, {props.data.user.name}</li>
+                                <li className="welcome-text">Здравей, {props.data.user.name}</li>
                                 <li><button className="user-button" onClick={onClickExitButton}>Излез</button></li>
                             </ul>
                         </div>

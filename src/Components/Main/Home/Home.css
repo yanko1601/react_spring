@@ -14,12 +14,27 @@ p {
 }
 
 .table-wrapper {
+    margin: 10px auto;
     display:inline-flex;
     flex-direction: row;
-    justify-content: space-between;
 }
 
 .table-section {
     width: 28vw;
     margin: 10px 30px;
+}
+
+.game-section {
+    width: 40vw;
+    margin: 10px 10px;
+}
+
+.ranklist-section {
+    width: 20vw;
+    margin: 10px 10px;
+}
+
+.points-section {
+    width: 20vw;
+    margin: 10px 10px;
 }

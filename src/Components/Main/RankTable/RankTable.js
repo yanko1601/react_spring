@@ -1,5 +1,6 @@
 import './RankTable.css';
 import { useState, useEffect } from 'react'
+import { Link } from 'react-router-dom';
 
 const RankTable = () => {
 
@@ -42,8 +43,8 @@ const RankTable = () => {
                                 {players.res ? 
                                     players.res.map(x => 
                                         <div class="divTableRow" key={x.id}>
-                                            <div class="divTableCell players" >{x.id}</div>
-                                            <div class="divTableCell players" >{x.name} {x.lastName}</div>
+                                            <div class="divTableCell players" >{x.rank}</div>
+                                            <div class="divTableCell players" ><Link to='/profile/${x.id}'>{x.name} {x.lastName}</Link></div>
                                         </div>)
                                         :
                                         <div class="divTableRow">

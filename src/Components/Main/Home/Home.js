@@ -12,14 +12,14 @@ const Home = (props) => {
             <div>
                 <h1>Тенис лига Шумен</h1>
                 <div className="table-wrapper">
-                    <section className="table-section">
+                    <section className="ranklist-section">
                         <RankTable></RankTable>
                     </section>
-                    <section className="table-section">
-                        <GamesTable></GamesTable>
+                    <section className="game-section">
+                        <GamesTable data={{user: props.data.user, token: props.data.token}}></GamesTable>
                     </section>
-                    <section className="table-section">
-                        <RankTable></RankTable>
+                    <section className="points-section">
+                        {/* <RankTable></RankTable> */}
                     </section>
                 </div>
             </div>
