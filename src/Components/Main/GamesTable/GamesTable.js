@@ -23,6 +23,21 @@ class GamesTable extends Component {
         this.setState({games: data, loading: false});
     }
 
+    async onClickResultButton(id) {
+        const url = `http://localhost:8080/game/setresult/`;
+        const response = await fetch(url, {
+            method: 'POST',
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json',
+                'Authorization': `${this.props.data.token}`
+                    },
+            body: JSON.stringify({gameId: id})
+        });
+        const data = await response.json();
+        this.setState({message: data});
+    }
+
 
     render() {
         return(
@@ -53,7 +68,7 @@ class GamesTable extends Component {
                                             <div className="divTableCell players">{g.place}</div>
                                             <div className="divTableCell players">{g.time}</div>
                                             {this.props.data.user.role === 'ADMIN' ?
-                                                <div className="divTableCell players"><button className="result-button">Резултат</button></div>
+                                                <div className="divTableCell players"><button className="result-button" onClick={this.onClickResultButton.bind(this, g.id)}>Резултат</button></div>
                                             :
                                             <div></div>
                                             }
