@@ -73,9 +73,6 @@ const Register = (props) => {
                                 <label>Град</label>
                                 <select type="text" placeholder="град" name="city" defaultValue="Шумен">
                                     <option key="1" value="Шумен">Шумен</option>
-                                    <option key="2" value="Варна">Варна</option>
-                                    <option key="3" value="Русе">Русе</option>
-                                    <option key="4" value="Бургас">Бургас</option>
                                 </select>
                             </div>
                             {/* <div class = "login-field">

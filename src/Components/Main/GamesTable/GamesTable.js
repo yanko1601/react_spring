@@ -75,9 +75,29 @@ class GamesTable extends Component {
                                         </div>                                   
                                     </div>
                                 )}
-                            </div>                             
+                            </div>
+                            {/* <div class="table-header">
+                                <p>Изиграни мачове гр. Шумен</p>                            
+                                    <div className="divTable blueTable">
+                                        <div className="divTableHeading">
+                                            <div className="divTableRow">
+                                                <div className="divTableHead">Мач</div>
+                                                <div className="divTableHead">Резултат</div>
+                                            </div>
+                                        </div>
+                                {this.state.finished.map(fg =>
+                                        <div className="divTableBody">                                
+                                            <div className="divTableRow" key={fg.id}>
+                                                <div className="divTableCell players">{fg.firstPlayerFullName} : {fg.secondPlayerFullName}</div>
+                                                <div className="divTableCell players">{fg.firstGames} : {fg.secondGames}</div>
+                                            </div>                                   
+                                        </div>
+                                        )}
+                                    </div>                       
+                            </div> */}
                     </div>
-                
+
+                    
             }
             
         </div>
