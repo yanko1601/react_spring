@@ -1,5 +1,4 @@
 import './Challenge.css'
-import RankTable from '../RankTable/RankTable';
 import ChallengeTable from '../ChallengeTable/ChallengeTable';
 
 const Challenge = (props) => {

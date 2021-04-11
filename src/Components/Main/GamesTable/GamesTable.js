@@ -34,36 +34,32 @@ class GamesTable extends Component {
                 :
                 <div>
                     <div class="table-header">
-                        <p>Предстоящи мачове гр. </p>                            
-                            <div class="divTable blueTable"/>                            
-                                
-                                    <div class="divTableHeading">
-                                        <div class="divTableRow">
-                                            <div class="divTableHead">Мач</div>
-                                            <div class="divTableHead">Град</div>
-                                            <div class="divTableHead">Корт</div>
-                                            <div class="divTableHead">Час</div>
-                                            <div class="divTableHead">Рез</div>
+                        <p>Предстоящи мачове гр. Шумен</p>                            
+                            <div className="divTable blueTable"/>
+                                    <div className="divTableHeading">
+                                        <div className="divTableRow">
+                                            <div className="divTableHead">Мач</div>
+                                            <div className="divTableHead">Град</div>
+                                            <div className="divTableHead">Корт</div>
+                                            <div className="divTableHead">Час</div>
+                                            <div className="divTableHead">Рез</div>
                                         </div>
                                     </div>
                                 {this.state.games.map(g =>
-                                    <div class="divTableBody">                                
-                                        <div class="divTableRow" key={g.id}>
-                                            <div class="divTableCell players">{g.firstPlayerFullName} : {g.secondPlayerFullName}</div>
-                                            <div class="divTableCell players">{g.city}</div>
-                                            <div class="divTableCell players">{g.place}</div>
-                                            <div class="divTableCell players">{g.time}</div>
+                                    <div className="divTableBody">                                
+                                        <div className="divTableRow" key={g.id}>
+                                            <div className="divTableCell players">{g.firstPlayerFullName} : {g.secondPlayerFullName}</div>
+                                            <div className="divTableCell players">{g.city}</div>
+                                            <div className="divTableCell players">{g.place}</div>
+                                            <div className="divTableCell players">{g.time}</div>
                                             {this.props.data.user.role === 'ADMIN' ?
-                                                <div class="divTableCell players"><button>Резултат</button></div>
+                                                <div className="divTableCell players"><button className="result-button">Резултат</button></div>
                                             :
                                             <div></div>
                                             }
-                                            
                                         </div>                                   
                                     </div>
                                 )}
-                                
-                                
                             </div>                             
                     </div>
                 

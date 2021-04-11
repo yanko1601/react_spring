@@ -1,10 +1,10 @@
-div.blueTable {
+/* div.blueTable {
     border: 1px solid #1C6EA4;
     background-color: #EEEEEE;
     width: 100%;
     text-align: left;
     border-collapse: collapse;
-  }
+  } */
   .divTable.blueTable .divTableCell, .divTable.blueTable .divTableHead {
     border: 1px solid #AAAAAA;
     padding: 3px 2px;
@@ -51,7 +51,7 @@ div.blueTable {
   .blueTable.outerTableFooter .tableFootStyle {
     padding: 3px 5px; 
   }
-  /* DivTable.com */
+  
   .divTable{ display: table; }
   .divTableRow { display: table-row; }
   .divTableHeading { display: table-header-group;}
@@ -62,11 +62,12 @@ div.blueTable {
 
   .players {
     font-style: italic;
+    padding: 2px 10px;
     font-family: 'Times New Roman', Times, serif;
     text-align: center;
-    color: darkblue;
+    color: rgb(18, 18, 46);
     font-weight: bold;
-    font-size: large;
+    font-size: 14px;
   }
 
   .table-header {
@@ -83,4 +84,11 @@ div.blueTable {
     font-family: sans-serif;
     font-size: large;
     background-color: rgb(230, 164, 65);
+  }
+
+  .result-button {
+    background: rgb(250, 94, 120);
+    color: black;
+    border: 2px solid black;
+    border-radius: 3px;
   }

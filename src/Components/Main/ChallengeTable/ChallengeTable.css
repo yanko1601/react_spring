@@ -2,3 +2,35 @@
     background: lightgreen;
     width: 400px;
 }
+
+
+
+  .chall-button {
+      background: rgb(238, 154, 154);
+      color: black;
+      border: 2px solid black;
+      border-radius: 3px;
+      padding: 5px;
+  }
+
+  .decline-button {
+    background: rgb(248, 49, 49);
+    color: black;
+    border: 2px solid black;
+    border-radius: 3px;
+
+  }
+
+  .accept-button {
+      background: rgb(192, 240, 145);
+      color: black;
+      border: 2px solid black;
+      border-radius: 3px;
+      margin-right: 10px;
+
+  }
+
+  .right-column {
+      font-family: 'Times New Roman', Times, serif;
+      font-size: 14px;
+  }

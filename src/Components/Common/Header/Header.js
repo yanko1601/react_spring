@@ -27,7 +27,6 @@ const Header = (props) => {
                             :
                             <div className="first-bar">
                             <Link className="user-button" to="/">Начало</Link>
-                            <Link className="user-button" to="#">Ранглиста</Link>
                             <Link className="user-button" to="/challenge">Предизвикай</Link>
                             </div>
                         }

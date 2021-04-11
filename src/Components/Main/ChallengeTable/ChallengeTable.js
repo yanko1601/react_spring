@@ -123,22 +123,22 @@ class ChallengeTable extends Component {
                                         <div className="divTableCell players" >
                                             {pl.challengedYou ? 
                                                 <div>
-                                                    <p>Предизвикан си</p>
-                                                    <button onClick={this.onClickReceiveButton.bind(this, pl.id)}>Приеми</button>
-                                                    <button onClick={this.onClickDeclineButton.bind(this, pl.id)}>Откажи</button>
+                                                    <p className="right-column">Предизвикан си</p>
+                                                    <button className="accept-button" onClick={this.onClickReceiveButton.bind(this, pl.id)}>Приеми</button>
+                                                    <button className="decline-button" onClick={this.onClickDeclineButton.bind(this, pl.id)}>Откажи</button>
                                                 </div>
                                                 :
                                                 pl.challenged ?
                                                 <div>
-                                                    <p>Предизвикан...</p>
+                                                    <p className="right-column">Предизвикан...</p>
                                                 </div>
                                                 :
                                                 pl.haveMatch ?
                                                 <div>
-                                                    <p>Имате вече мач</p>
+                                                    <p className="right-column">Имате вече мач</p>
                                                 </div>
                                                 :
-                                                <button onClick={this.onClickChallengeButton.bind(this, pl.id)}>Предизвикай</button>                    
+                                                <button className="chall-button" onClick={this.onClickChallengeButton.bind(this, pl.id)}>Предизвикай</button>                    
                                             }
                                         </div>
                                     </div>
