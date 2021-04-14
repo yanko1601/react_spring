@@ -44,7 +44,7 @@ const RankTable = () => {
                                     players.res.map(x => 
                                         <div class="divTableRow" key={x.id}>
                                             <div class="divTableCell players" >{x.rank}</div>
-                                            <div class="divTableCell players" ><Link to='/profile/${x.id}'>{x.name} {x.lastName}</Link></div>
+                                            <div class="divTableCell players" ><Link to='/profile/'>{x.name} {x.lastName}</Link></div>
                                         </div>)
                                         :
                                         <div class="divTableRow">

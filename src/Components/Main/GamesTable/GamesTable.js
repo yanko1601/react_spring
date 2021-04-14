@@ -9,6 +9,18 @@ class GamesTable extends Component {
     }
 
     async componentDidMount(){
+
+        const finishedGames = await fetch('http://localhost:8080/game/getallfinished', {
+            method: 'GET',
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json',
+                'Authorization': `${this.props.data.token}`
+                    }
+        })
+        .then(res => res.json())
+        .catch(err => console.log(err))
+
         const url = `http://localhost:8080/game/getall`;
         const response = await fetch(url, {
             method: 'GET',
@@ -20,7 +32,10 @@ class GamesTable extends Component {
                 }
             );
         const data = await response.json();
-        this.setState({games: data, loading: false});
+
+        this.setState({ games: data, 
+                        finished: finishedGames,
+                        loading: false});
     }
 
     async onClickResultButton(id) {
@@ -76,7 +91,7 @@ class GamesTable extends Component {
                                     </div>
                                 )}
                             </div>
-                            {/* <div class="table-header">
+                            <div class="table-header">
                                 <p>Изиграни мачове гр. Шумен</p>                            
                                     <div className="divTable blueTable">
                                         <div className="divTableHeading">
@@ -85,7 +100,7 @@ class GamesTable extends Component {
                                                 <div className="divTableHead">Резултат</div>
                                             </div>
                                         </div>
-                                {this.state.finished.map(fg =>
+                                        {this.state.finished.map(fg => 
                                         <div className="divTableBody">                                
                                             <div className="divTableRow" key={fg.id}>
                                                 <div className="divTableCell players">{fg.firstPlayerFullName} : {fg.secondPlayerFullName}</div>
@@ -94,7 +109,7 @@ class GamesTable extends Component {
                                         </div>
                                         )}
                                     </div>                       
-                            </div> */}
+                            </div>
                     </div>
 
                     
