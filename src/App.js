@@ -11,6 +11,7 @@ import Register from './Components/Common/Register/Register';
 import Admin from './Components/Admin/Admin';
 import Challenge from './Components/Main/Challenge/Challenge';
 import Profile from './Components/Main/Profile/Profile';
+import EndOfLeague from './Components/Main/EndOfLeague/EndOfLeague';
 
 function App() {
 
@@ -45,6 +46,7 @@ function App() {
         <Route path="/admin" exact component={ Admin }/>
         <Route path="/challenge" exact component={ () => <Challenge data={{user: currentUser, token: token}}/>}/>
         <Route path="/profile" exact component={ Profile }/>
+        <Route path="/admin/endofleague" exact component={ () => <EndOfLeague token={token} />}/>
       </Switch>
       <Footer />
     </div>

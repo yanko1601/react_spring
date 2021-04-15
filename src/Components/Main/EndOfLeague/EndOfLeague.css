@@ -1,0 +1,13 @@
+.end-wrapper {
+    display: flex;
+    flex-direction: column;
+}
+
+.end-of-league {
+    align-items: center;
+    background: rgb(236, 91, 120);
+    border: 3px solid black;
+    border-radius: 5px;
+    padding: 10px 5px;
+    margin: 100px auto;
+}
